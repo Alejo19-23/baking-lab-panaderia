@@ -90,7 +90,7 @@
     position:absolute;inset:0;z-index:0;
     background-image:
       linear-gradient(180deg, rgba(23,17,12,.35) 0%, rgba(23,17,12,.55) 45%, var(--crust-900) 96%),
-      linear-gradient(90deg, rgba(23,17,12,.85) 0%, rgba(23,17,12,.15) 55%),
+      linear-gradient(270deg, rgba(23,17,12,.85) 0%, rgba(23,17,12,.15) 55%),
       url('https://images.pexels.com/photos/30596807/pexels-photo-30596807.jpeg?auto=compress&cs=tinysrgb&w=1920');
     background-size:cover;background-position:center 40%;
     animation:kenburns 22s ease-in-out infinite alternate;
@@ -129,26 +129,28 @@
     background-size:3px 3px;
     pointer-events:none;
   }
-  .hero-content{position:relative;z-index:2;width:100%;padding-bottom:140px;}
+  .hero-content{position:relative;z-index:2;width:100%;padding-bottom:140px;display:flex;justify-content:flex-end;}
+  .hero-content-inner{text-align:right;}
   .eyebrow{
     display:inline-flex;align-items:center;gap:10px;
     font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
     color:var(--gold-400);margin-bottom:22px;
+    flex-direction:row-reverse;
   }
   .eyebrow .rule{width:34px;height:1px;background:var(--gold-500);}
   .hero h1{
     font-size:clamp(2.6rem, 6vw, 5rem);
     font-weight:600;line-height:1.02;letter-spacing:-.01em;
-    max-width:820px;color:var(--flour-100);
+    max-width:820px;color:var(--flour-100);margin-left:auto;
   }
   .hero h1 em{font-style:italic;color:var(--gold-400);font-weight:500;}
   .hero p.lead{
-    margin-top:26px;font-size:1.08rem;line-height:1.65;max-width:480px;color:rgba(244,234,217,.78);
+    margin-top:26px;margin-left:auto;font-size:1.08rem;line-height:1.65;max-width:480px;color:rgba(244,234,217,.78);
   }
-  .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px;}
+  .hero-ctas{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:14px;margin-top:38px;}
 
   .hero-scroll-link{
-    display:inline-flex;align-items:center;gap:12px;margin-top:40px;
+    display:inline-flex;align-items:center;gap:12px;margin-top:40px;margin-left:auto;
     font-family:'JetBrains Mono',monospace;font-size:.82rem;letter-spacing:.04em;
     color:var(--flour-100);border-bottom:1px solid var(--gold-500);padding-bottom:8px;
     transition:gap .25s ease, color .25s ease;
@@ -156,6 +158,13 @@
   .hero-scroll-link svg{width:16px;height:16px;color:var(--gold-500);animation:bob 1.8s ease-in-out infinite;}
   .hero-scroll-link:hover{gap:18px;color:var(--gold-400);}
   @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(5px);}}
+  @media(max-width:820px){
+    .hero-content{justify-content:flex-start;}
+    .hero-content-inner{text-align:left;}
+    .eyebrow{flex-direction:row;}
+    .hero h1, .hero p.lead, .hero-scroll-link{margin-left:0;}
+    .hero-ctas{justify-content:flex-start;}
+  }
 
   /* ---------- ELIGE TU CONSULTA (CTA grande) ---------- */
   .choose-cta{background:var(--crust-800);position:relative;overflow:hidden;}
@@ -412,13 +421,15 @@
     <span class="p p4"></span><span class="p p5"></span><span class="p p6"></span>
   </div>
   <div class="wrap hero-content">
-    <div class="eyebrow"><span class="rule"></span>Baking Lab · Panadería de precisión</div>
-    <h1>Donde el pan<br>se vuelve <em>ciencia.</em></h1>
-    <p class="lead">Masa madre viva, técnica medida al gramo y catorce años de experimentación. Cursos y pan artesanal para quienes quieren entender el pan, no solo comerlo.</p>
-    <a class="hero-scroll-link" href="#elige">
-      <span>Escríbenos por Cursos o Pedidos</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
+    <div class="hero-content-inner">
+      <div class="eyebrow"><span class="rule"></span>Baking Lab · Panadería de precisión</div>
+      <h1>Donde el pan<br>se vuelve <em>ciencia.</em></h1>
+      <p class="lead">Masa madre viva, técnica medida al gramo y catorce años de experimentación. Cursos y pan artesanal para quienes quieren entender el pan, no solo comerlo.</p>
+      <a class="hero-scroll-link" href="#elige">
+        <span>Escríbenos por Cursos o Pedidos</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
   </div>
   <div class="scroll-cue"><div class="ln"></div>Desliza</div>
 </section>
