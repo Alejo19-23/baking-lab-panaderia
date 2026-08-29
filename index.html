@@ -171,7 +171,7 @@
   .choose-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:52px;}
   @media(max-width:820px){.choose-grid{grid-template-columns:1fr;}}
   .choose-card{
-    position:relative;border-radius:26px;overflow:hidden;
+    position:relative;border-radius:26px;overflow:hidden;cursor:pointer;
     min-height:380px;display:flex;align-items:flex-end;
     border:1px solid var(--line);
     transition:transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s ease;
@@ -445,7 +445,7 @@
     <p class="section-sub">Un solo clic te conecta directo a nuestro WhatsApp. Elige tu opción y con gusto te atendemos.</p>
 
     <div class="choose-grid">
-      <a class="choose-card reveal" href="https://wa.me/50670945341?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20CURSOS%20de%20Baking%20Lab" target="_blank" rel="noopener">
+      <div class="choose-card reveal" data-scroll-target="#cursos">
         <div class="choose-bg choose-bg-cursos"></div>
         <div class="choose-content">
           <div class="choose-icon">
@@ -453,14 +453,14 @@
           </div>
           <h3>Cursos</h3>
           <p>Masa madre, diseños de pan y pan de sandwich. Cupo, horarios y siguiente fecha disponible.</p>
-          <span class="choose-cta-tag">
+          <a class="choose-cta-tag" href="https://wa.me/50670945341?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20CURSOS%20de%20Baking%20Lab" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.76.46 3.48 1.34 5L2 22l5.14-1.35a9.96 9.96 0 0 0 4.9 1.28h.01c5.52 0 10-4.48 10-10s-4.49-9.93-10.01-9.93zm5.86 14.2c-.25.7-1.45 1.34-2 1.42-.51.08-1.16.11-1.87-.12-.43-.14-.98-.32-1.69-.62-2.97-1.28-4.9-4.28-5.05-4.48-.15-.2-1.2-1.6-1.2-3.05s.76-2.16 1.03-2.46c.27-.3.6-.37.8-.37.2 0 .4.002.57.01.18.008.43-.07.67.51.25.6.85 2.07.92 2.22.08.15.13.33.02.53-.1.2-.15.33-.3.5-.15.18-.32.4-.46.53-.15.15-.31.31-.13.61.18.3.8 1.32 1.72 2.14 1.18 1.05 2.18 1.38 2.48 1.53.3.15.47.13.65-.08.18-.2.76-.89.96-1.19.2-.3.4-.25.67-.15.28.1 1.76.83 2.06.98.3.15.5.22.57.35.08.13.08.75-.17 1.45z"/></svg>
             Consultar por Cursos
-          </span>
+          </a>
         </div>
-      </a>
+      </div>
 
-      <a class="choose-card reveal" href="https://wa.me/50670945341?text=Hola%2C%20quiero%20hacer%20un%20PEDIDO%20en%20Baking%20Lab" target="_blank" rel="noopener">
+      <div class="choose-card reveal" data-scroll-target="#productos">
         <div class="choose-bg choose-bg-pedidos"></div>
         <div class="choose-content">
           <div class="choose-icon">
@@ -468,12 +468,12 @@
           </div>
           <h3>Pedidos</h3>
           <p>Aparta tu pan de la semana o pide para un evento. Te confirmamos disponibilidad al instante.</p>
-          <span class="choose-cta-tag">
+          <a class="choose-cta-tag" href="https://wa.me/50670945341?text=Hola%2C%20quiero%20hacer%20un%20PEDIDO%20en%20Baking%20Lab" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.76.46 3.48 1.34 5L2 22l5.14-1.35a9.96 9.96 0 0 0 4.9 1.28h.01c5.52 0 10-4.48 10-10s-4.49-9.93-10.01-9.93zm5.86 14.2c-.25.7-1.45 1.34-2 1.42-.51.08-1.16.11-1.87-.12-.43-.14-.98-.32-1.69-.62-2.97-1.28-4.9-4.28-5.05-4.48-.15-.2-1.2-1.6-1.2-3.05s.76-2.16 1.03-2.46c.27-.3.6-.37.8-.37.2 0 .4.002.57.01.18.008.43-.07.67.51.25.6.85 2.07.92 2.22.08.15.13.33.02.53-.1.2-.15.33-.3.5-.15.18-.32.4-.46.53-.15.15-.31.31-.13.61.18.3.8 1.32 1.72 2.14 1.18 1.05 2.18 1.38 2.48 1.53.3.15.47.13.65-.08.18-.2.76-.89.96-1.19.2-.3.4-.25.67-.15.28.1 1.76.83 2.06.98.3.15.5.22.57.35.08.13.08.75-.17 1.45z"/></svg>
             Consultar por Pedidos
-          </span>
+          </a>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 </section>
@@ -677,6 +677,14 @@
 </a>
 
 <script>
+  // Choose-card: clicking the card scrolls to its section; clicking the WhatsApp tag still opens WhatsApp
+  document.querySelectorAll('.choose-card[data-scroll-target]').forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('.choose-cta-tag')) return;
+      document.querySelector(card.dataset.scrollTarget)?.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
   // Nav solid on scroll
   const header = document.getElementById('siteHeader');
   window.addEventListener('scroll', () => {
