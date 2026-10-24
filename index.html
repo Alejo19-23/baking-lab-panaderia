@@ -329,6 +329,14 @@
     transition:border-color .25s ease, transform .25s ease;
   }
   .course-card:hover{border-color:var(--gold-500);transform:translateY(-6px);}
+  .course-card{overflow:hidden;}
+  .course-photo{margin:-34px -28px 22px;height:230px;overflow:hidden;}
+  .course-photo img{width:100%;height:100%;object-fit:cover;object-position:center 55%;transition:transform .5s ease;}
+  .course-card:hover .course-photo img{transform:scale(1.05);}
+  .course-price{margin-top:18px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}
+  .course-price .amt{font-family:'Fraunces',serif;font-weight:600;font-size:1.7rem;color:var(--gold-400);}
+  .course-price .inc{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,234,217,.6);}
+  .course-date{margin-top:14px;padding:10px 14px;border-left:2px solid var(--gold-500);background:rgba(201,154,68,.08);font-size:.92rem;}
   .course-icon{width:52px;height:52px;margin-bottom:22px;color:var(--gold-500);}
   .course-card h3{font-size:1.35rem;font-weight:600;}
   .course-card p{margin-top:12px;color:rgba(244,234,217,.68);font-size:.94rem;line-height:1.6;flex-grow:1;}
@@ -593,16 +601,14 @@
 
     <div class="course-grid">
       <div class="course-card reveal">
-        <svg class="course-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6">
-          <path d="M24 6c-8 6-14 13-14 21a14 14 0 0 0 28 0c0-8-6-15-14-21z"/>
-          <path d="M24 14c-2.5 3-5 6.5-5 10.5" stroke-linecap="round"/>
-        </svg>
-        <h3>Curso de Masa Madre</h3>
-        <p>Crea y mantén tu propio starter, entiende la fermentación desde cero y hornea tu primer pan 100% natural, sin levadura comercial.</p>
-        <div class="level">Nivel · Principiante — Intermedio</div>
-        <a class="btn btn-whats" href="https://wa.me/50670945341?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20Curso%20de%20Masa%20Madre" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+        <div class="course-photo"><img src="img/panes-integrales.jpg" alt="Pan integral de masa madre con miga abierta"></div>
+        <h3>Panes Integrales 2</h3>
+        <p>Aprende a dominar la técnica en la elaboración de panes integrales y saludables.</p>
+        <div class="course-price"><span class="amt">₡50.000</span><span class="inc">Todo incluido</span></div>
+        <div class="level">Presencial · 100% práctico</div>
+        <div class="course-date">7 de noviembre</div>
+        <a class="btn btn-whats" href="https://wa.me/50670945341?text=Hola%2C%20quiero%20reservar%20mi%20cupo%20en%20el%20curso%20PANES%20INTEGRALES%202%20%287%20de%20noviembre%29" target="_blank" rel="noopener">Reserva ya</a>
       </div>
-
       <div class="course-card reveal">
         <svg class="course-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6">
           <path d="M8 24c4-10 12-16 16-16s12 6 16 16-12 16-16 16-20-6-16-16z"/>
