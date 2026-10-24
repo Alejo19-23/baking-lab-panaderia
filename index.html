@@ -330,9 +330,13 @@
   }
   .course-card:hover{border-color:var(--gold-500);transform:translateY(-6px);}
   .course-card{overflow:hidden;}
-  .course-photo{margin:-34px -28px 22px;height:230px;overflow:hidden;}
-  .course-photo img{width:100%;height:100%;object-fit:cover;object-position:center 55%;transition:transform .5s ease;}
-  .course-card:hover .course-photo img{transform:scale(1.05);}
+  .course-card.has-photo{position:relative;justify-content:flex-end;min-height:760px;}
+  .course-photo{position:absolute;top:0;left:0;right:0;margin:0;height:64%;overflow:hidden;}
+  .course-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(23,17,12,0) 0%, rgba(23,17,12,0) 62%, var(--crust-900) 100%);}
+  .course-photo img{width:100%;height:100%;object-fit:cover;object-position:center 42%;transition:transform .6s ease;}
+  .course-card:hover .course-photo img{transform:scale(1.04);}
+  .course-card.has-photo > *:not(.course-photo){position:relative;z-index:1;}
+  .course-card.has-photo p{flex-grow:0;color:rgba(244,234,217,.8);}
   .course-price{margin-top:18px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}
   .course-price .amt{font-family:'Fraunces',serif;font-weight:600;font-size:1.7rem;color:var(--gold-400);}
   .course-price .inc{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,234,217,.6);}
@@ -600,7 +604,7 @@
     </div>
 
     <div class="course-grid">
-      <div class="course-card reveal">
+      <div class="course-card has-photo reveal">
         <div class="course-photo"><img src="img/panes-integrales.jpg" alt="Pan integral de masa madre con miga abierta"></div>
         <h3>Panes Integrales 2</h3>
         <p>Aprende a dominar la técnica en la elaboración de panes integrales y saludables.</p>
