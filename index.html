@@ -366,16 +366,16 @@
 
   /* ---------- INSTALACIONES ---------- */
   .instalaciones{background:var(--crust-800);}
-  .insta-grid{
-    display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:220px 220px;gap:16px;margin-top:56px;
-  }
-  .insta-grid a:nth-child(1){grid-row:1/3;}
-  .insta-grid a{border-radius:18px;overflow:hidden;border:1px solid var(--line);position:relative;display:block;}
-  .insta-grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
-  .insta-grid a:hover img{transform:scale(1.05);}
+  .insta-grid{columns:3;column-gap:16px;margin-top:56px;}
+  .insta-item{break-inside:avoid;margin:0 0 16px;border-radius:18px;overflow:hidden;border:1px solid var(--line);position:relative;display:block;}
+  .insta-item img{width:100%;height:auto;display:block;transition:transform .6s ease;}
+  .insta-item:hover img{transform:scale(1.04);}
   @media(max-width:880px){
-    .insta-grid{grid-template-columns:1fr 1fr;grid-template-rows:180px 180px 180px;}
-    .insta-grid a:nth-child(1){grid-row:1/2;grid-column:1/3;height:220px;}
+    .insta-grid{columns:auto;display:grid;grid-template-columns:1fr 1fr;grid-auto-flow:dense;gap:12px;}
+    .insta-item{margin:0;border-radius:14px;}
+    .insta-item.wide, .insta-item.span-m{grid-column:span 2;}
+    .insta-item.span-m{aspect-ratio:3/2;}
+    .insta-item.span-m img{height:100%;object-fit:cover;}
   }
 
   /* ---------- FOOTER ---------- */
@@ -739,11 +739,12 @@
     <p class="section-sub">Enseñanza desde una panadería en funcionamiento con circunstancias reales para que puedas desde una perspectiva de negocio.</p>
 
     <div class="insta-grid">
-      <a href="#" class="reveal"><img src="https://images.pexels.com/photos/36522640/pexels-photo-36522640.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Obrador principal"></a>
-      <a href="#" class="reveal"><img src="https://images.pexels.com/photos/36445170/pexels-photo-36445170.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Horno de piedra"></a>
-      <a href="#" class="reveal"><img src="https://images.pexels.com/photos/11869479/pexels-photo-11869479.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Aula de clases"></a>
-      <a href="#" class="reveal"><img src="https://images.pexels.com/photos/16239806/pexels-photo-16239806.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Mesas de trabajo"></a>
-      <a href="#" class="reveal"><img src="https://images.pexels.com/photos/3218467/pexels-photo-3218467.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Exhibición de pan"></a>
+      <figure class="insta-item reveal"><img src="img/taller/DSC08796.jpg" alt="Fabián Solano dando clase en el taller de Baking Lab" loading="lazy"></figure>
+      <figure class="insta-item wide reveal"><img src="img/taller/DSC08833.jpg" alt="Fabián en el taller con el logo de Baking Lab Academy" loading="lazy"></figure>
+      <figure class="insta-item wide reveal"><img src="img/taller/DSC08973.jpg" alt="Grupo de estudiantes junto a la mesa de producción" loading="lazy"></figure>
+      <figure class="insta-item reveal"><img src="img/taller/DSC08830.jpg" alt="Estudiantes formando pan durante la clase" loading="lazy"></figure>
+      <figure class="insta-item span-m reveal"><img src="img/taller/DSC08958.jpg" alt="Cinnamon roll recién horneado" loading="lazy"></figure>
+      <figure class="insta-item wide reveal"><img src="img/taller/DSC08865.jpg" alt="Trenza de canela terminada" loading="lazy"></figure>
     </div>
   </div>
 </section>
