@@ -352,7 +352,7 @@
   /* ---------- PRODUCTOS ---------- */
   .prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:56px;}
   @media(max-width:980px){.prod-grid{grid-template-columns:repeat(2,1fr);}}
-  .prod-card{border-radius:18px;overflow:hidden;border:1px solid var(--line);position:relative;aspect-ratio:3/4;}
+  .prod-card{border-radius:18px;overflow:hidden;border:1px solid var(--line);position:relative;aspect-ratio:4/3;}
   .prod-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
   .prod-card:hover img{transform:scale(1.06);}
   .prod-overlay{
@@ -360,7 +360,7 @@
     background:linear-gradient(180deg, transparent 40%, rgba(23,17,12,.92) 100%);
     display:flex;align-items:flex-end;padding:20px;
   }
-  .prod-overlay span{font-family:'Fraunces',serif;font-weight:600;font-size:1.1rem;}
+  .prod-overlay span{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;line-height:1.25;}
   .prod-cta{text-align:center;margin-top:48px;}
   .prod-cta p{color:rgba(244,234,217,.65);margin-bottom:20px;font-size:.95rem;}
 
@@ -644,20 +644,80 @@
 
     <div class="prod-grid">
       <div class="prod-card reveal">
-        <img src="https://images.unsplash.com/photo-1728026918148-72bc0420373c?fm=jpg&w=1200&auto=format&fit=crop" alt="Pan de masa madre">
-        <div class="prod-overlay"><span>Masa Madre Clásica</span></div>
+        <img src="img/pedidos/pan-pugliese.jpg" alt="Pan Pugliese" loading="lazy">
+        <div class="prod-overlay"><span>Pan Pugliese</span></div>
       </div>
       <div class="prod-card reveal">
-        <img src="https://images.unsplash.com/photo-1610307522769-f923139bac30?fm=jpg&w=1200&auto=format&fit=crop" alt="Pan de campo">
-        <div class="prod-overlay"><span>Pan de Campo</span></div>
+        <img src="img/pedidos/pan-integral-manzana.jpg" alt="Pan Integral de Manzana" loading="lazy">
+        <div class="prod-overlay"><span>Pan Integral de Manzana</span></div>
       </div>
       <div class="prod-card reveal">
-        <img src="https://images.unsplash.com/photo-1585478259715-876a6a81fc08?fm=jpg&w=1200&auto=format&fit=crop" alt="Pan decorado">
-        <div class="prod-overlay"><span>Pan Decorado</span></div>
+        <img src="img/pedidos/pan-flor-sesamo.jpg" alt="Pan Flor de Sésamo" loading="lazy">
+        <div class="prod-overlay"><span>Pan Flor de Sésamo</span></div>
       </div>
       <div class="prod-card reveal">
-        <img src="https://images.unsplash.com/photo-1612136435623-a9bb63231e07?fm=jpg&w=1200&auto=format&fit=crop" alt="Pan de sandwich">
-        <div class="prod-overlay"><span>Pan de Sandwich</span></div>
+        <img src="img/pedidos/baguette-frances.jpg" alt="Baguette Francés" loading="lazy">
+        <div class="prod-overlay"><span>Baguette Francés</span></div>
+      </div>
+      <div class="prod-card reveal">
+        <img src="img/pedidos/focaccia.jpg" alt="Focaccia" loading="lazy">
+        <div class="prod-overlay"><span>Focaccia</span></div>
+      </div>
+      <div class="prod-card reveal">
+        <img src="img/pedidos/pan-integral-cacao-multigrano.jpg" alt="Pan Integral de Cacao Multigrano" loading="lazy">
+        <div class="prod-overlay"><span>Pan Integral de Cacao Multigrano</span></div>
+      </div>
+      <div class="prod-card reveal">
+        <img src="img/pedidos/pan-integral-zanahoria-jengibre.jpg" alt="Pan Integral de Zanahoria y Jengibre" loading="lazy">
+        <div class="prod-overlay"><span>Pan Integral de Zanahoria y Jengibre</span></div>
+      </div>
+      <div class="prod-card reveal">
+        <img src="img/pedidos/pan-ciabatta.jpg" alt="Pan Ciabatta" loading="lazy">
+        <div class="prod-overlay"><span>Pan Ciabatta</span></div>
+      </div>
+      <div class="prod-card reveal">
+        <img src="img/pedidos/cinnamon-roll.jpg" alt="Cinnamon Roll" loading="lazy">
+        <div class="prod-overlay"><span>Cinnamon Roll</span></div>
+      </div>
+      <div class="prod-card reveal">
+        <img src="img/pedidos/bowl-para-sopa.jpg" alt="Bowl para Sopa" loading="lazy">
+        <div class="prod-overlay"><span>Bowl para Sopa</span></div>
+      </div>
+      <div class="prod-card reveal">
+        <img src="img/pedidos/hamburguesa-artesanal.jpg" alt="Hamburguesa Artesanal" loading="lazy">
+        <div class="prod-overlay"><span>Hamburguesa Artesanal</span></div>
+      </div>
+      <div class="prod-card reveal">
+        <img src="img/pedidos/hamburguesa-brioche.jpg" alt="Hamburguesa Tipo Brioche" loading="lazy">
+        <div class="prod-overlay"><span>Hamburguesa Tipo Brioche</span></div>
+      </div>
+      <div class="prod-card reveal">
+        <img src="img/pedidos/cacao-y-cafe.jpg" alt="Cacao y Café" loading="lazy">
+        <div class="prod-overlay"><span>Cacao y Café</span></div>
+      </div>
+      <div class="prod-card reveal">
+        <img src="img/pedidos/jalapeno-cheddar.jpg" alt="Jalapeño con Cheddar" loading="lazy">
+        <div class="prod-overlay"><span>Jalapeño con Cheddar</span></div>
+      </div>
+      <div class="prod-card reveal">
+        <img src="img/pedidos/masa-madre-natural.jpg" alt="Masa Madre Natural" loading="lazy">
+        <div class="prod-overlay"><span>Masa Madre Natural</span></div>
+      </div>
+      <div class="prod-card reveal">
+        <img src="img/pedidos/pan-masa-madre-multigrano.jpg" alt="Pan de Masa Madre Multigrano" loading="lazy">
+        <div class="prod-overlay"><span>Pan de Masa Madre Multigrano</span></div>
+      </div>
+      <div class="prod-card reveal">
+        <img src="img/pedidos/pan-de-muerto.jpg" alt="Pan de Muerto" loading="lazy">
+        <div class="prod-overlay"><span>Pan de Muerto</span></div>
+      </div>
+      <div class="prod-card reveal">
+        <img src="img/pedidos/pan-masa-madre-pasas-anis.jpg" alt="Pan de Masa Madre de Pasas con Anís" loading="lazy">
+        <div class="prod-overlay"><span>Pan de Masa Madre de Pasas con Anís</span></div>
+      </div>
+      <div class="prod-card reveal">
+        <img src="img/pedidos/pan-masa-madre-queso-oregano.jpg" alt="Pan de Masa Madre de Queso con Orégano" loading="lazy">
+        <div class="prod-overlay"><span>Pan de Masa Madre de Queso con Orégano</span></div>
       </div>
     </div>
 
